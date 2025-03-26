@@ -19,15 +19,26 @@ const createList = (arr) => {
 const list = createList([1, 2, 3, 4, 5].reverse());
 
 function reverseList(head) {
-  let obj = new ListNode(head.val),
-    cur = head.next;
+  let obj = null,
+    cur = head;
 
-  while (cur !== null) {
-    const v = new ListNode(cur.val, obj);
-    obj = v;
+  while (cur) {
+    obj = new ListNode(cur.val, obj);
     cur = cur.next;
   }
-  console.log(obj);
+  return obj;
 }
+
+// function reverseList(head) {
+//   let obj = new ListNode(head.val),
+//     cur = head.next;
+
+//   while (cur !== null) {
+//     const v = new ListNode(cur.val, obj);
+//     obj = v;
+//     cur = cur.next;
+//   }
+//   console.log(obj);
+// }
 
 reverseList(list);
